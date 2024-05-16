@@ -1,0 +1,21 @@
+# ninja log v5
+1	30	1715866158547599393	CMakeFiles/iperfandroid.dir/src/iperf_locale.c.o	6f3a1cd9392c0d2e
+1	40	1715866158557512823	CMakeFiles/iperfandroid.dir/src/dscp.c.o	7d31f0926bcbfa9c
+1	42	1715866158558053366	CMakeFiles/iperfandroid.dir/src/iperf_sctp.c.o	af34a7cbd40cc3ae
+2	44	1715866158561299079	CMakeFiles/iperfandroid.dir/src/iperf_time.c.o	9cc05f8a10db3e2e
+1	45	1715866158562671331	CMakeFiles/iperfandroid.dir/src/iperf_auth.c.o	156ef44d0abcc20a
+0	49	1715866158567015420	CMakeFiles/iperfandroid.dir/iperf.c.o	96fa7df65c51a1f2
+1	53	1715866158566155544	CMakeFiles/iperfandroid.dir/src/iperf_error.c.o	d7ba6f34524f818d
+2	53	1715866158567574171	CMakeFiles/iperfandroid.dir/src/iperf_tcp.c.o	8d1e91d968d95654
+1	59	1715866158573623179	CMakeFiles/iperfandroid.dir/src/iperf_client_api.c.o	3fef956a1c6cc97c
+1	62	1715866158580233606	CMakeFiles/iperfandroid.dir/src/iperf_server_api.c.o	40953e467f3bee9c
+0	65	1715866158582625109	CMakeFiles/iperfandroid.dir/src/cjson.c.o	15d12527d49b60e4
+42	78	1715866158596852962	CMakeFiles/iperfandroid.dir/src/main.c.o	8995f05307d8ec01
+49	80	1715866158598772340	CMakeFiles/iperfandroid.dir/src/timer.c.o	66258e3c67dd2c10
+31	84	1715866158602461345	CMakeFiles/iperfandroid.dir/src/iperf_udp.c.o	c7c7249d8a4d075c
+41	84	1715866158602472595	CMakeFiles/iperfandroid.dir/src/iperf_util.c.o	16e6150fc65a7100
+46	84	1715866158603311055	CMakeFiles/iperfandroid.dir/src/tcp_info.c.o	be9afe8ed84aa85b
+53	85	1715866158604495890	CMakeFiles/iperfandroid.dir/src/units.c.o	7d529f6b4c438837
+45	87	1715866158606027309	CMakeFiles/iperfandroid.dir/src/net.c.o	897d1f46fe02a82e
+1	100	1715866158617559992	CMakeFiles/iperfandroid.dir/src/iperf_api.c.o	b25a0f3837b5d08
+100	137	1715866158650774456	/Users/shubhendu/Desktop/iPerfAndroidDemo/iPerfAndroid/build/intermediates/cxx/Debug/633r3t2e/obj/x86_64/libiperfandroid.so	3dca62cdcf629fd0

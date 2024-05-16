@@ -1,0 +1,3 @@
+/Users/shubhendu/Desktop/iPerfAndroidDemo/iPerfAndroid/.cxx/Debug/633r3t2e/arm64-v8a/CMakeFiles/iperfandroid.dir
+/Users/shubhendu/Desktop/iPerfAndroidDemo/iPerfAndroid/.cxx/Debug/633r3t2e/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/shubhendu/Desktop/iPerfAndroidDemo/iPerfAndroid/.cxx/Debug/633r3t2e/arm64-v8a/CMakeFiles/rebuild_cache.dir

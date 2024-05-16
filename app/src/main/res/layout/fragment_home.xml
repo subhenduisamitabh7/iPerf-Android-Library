@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/titleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="iPerf Android Demo"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/titleHeader"
+        android:layout_margin="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Iperf Server IP:"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/ipaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IP Address"
+            android:maxEms="16"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Iperf Server Port"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IP Address"
+            android:text="5201"
+            android:inputType="number"
+            android:maxEms="6"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Test Duration"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IP Address"
+            android:text="30"
+            android:inputType="number"
+            android:maxEms="3"
+            />
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/startTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Test"
+            android:layout_gravity="center"
+            />
+
+        <ScrollView
+            android:id="@+id/ScrollView01"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/outputText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

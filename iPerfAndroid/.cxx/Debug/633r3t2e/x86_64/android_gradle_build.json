@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "/Users/shubhendu/Desktop/iPerfAndroidDemo/iPerfAndroid/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/shubhendu/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/shubhendu/Desktop/iPerfAndroidDemo/iPerfAndroid/.cxx/Debug/633r3t2e/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/shubhendu/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/shubhendu/Desktop/iPerfAndroidDemo/iPerfAndroid/.cxx/Debug/633r3t2e/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "iperfandroid::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86_64",
+      "artifactName": "iperfandroid",
+      "output": "/Users/shubhendu/Desktop/iPerfAndroidDemo/iPerfAndroid/build/intermediates/cxx/Debug/633r3t2e/obj/x86_64/libiperfandroid.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/shubhendu/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/shubhendu/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}
