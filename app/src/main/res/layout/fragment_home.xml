@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:hint="IP Address"
             android:maxEms="16"
+            android:text="192.168.245.202"
             />
 
         <TextView
@@ -83,6 +84,8 @@
             android:layout_gravity="center"
             />
 
+
+
         <ScrollView
             android:id="@+id/ScrollView01"
             android:layout_width="match_parent"
@@ -92,7 +95,10 @@
             <TextView
                 android:id="@+id/outputText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+            />
+
         </ScrollView>
     </LinearLayout>
 </RelativeLayout>

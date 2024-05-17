@@ -9,10 +9,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.shubhendu.iperfandroid.IPPerfTestListener;
 import com.shubhendu.iperfandroid.NativeLib;
 import com.shubhendu.iperfandroiddemo.databinding.FragmentHomeBinding;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class HomeFragment extends Fragment {
 
@@ -73,8 +76,19 @@ public class HomeFragment extends Fragment {
                                          int reverse   // 1 or 0 for download or upload test
                          */
 
-                    NativeLib nativeLib = new NativeLib();
-                    nativeLib.startPerfTestJNI(logFile.getAbsolutePath(),
+
+                NativeLib nativeLib = new NativeLib();
+                nativeLib.IPPerfTestListener = (throughput, progress) -> {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            DecimalFormat df = new DecimalFormat("####0.00");
+                            binding.outputText.setText("Current Bandwidth: "+df.format(throughput)+" Mbits/s");
+                        }
+                    });
+                };
+
+                nativeLib.startPerfTestJNI(logFile.getAbsolutePath(),
                             tempFile.getAbsolutePath(),
                             binding.ipaddress.getText().toString(),
                             parseInt(binding.port.getText().toString()),

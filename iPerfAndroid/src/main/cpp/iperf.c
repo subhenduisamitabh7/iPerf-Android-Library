@@ -10,8 +10,13 @@
 #include <sys/select.h>
 #include <android/log.h>
 #include <string.h>
+#include <assert.h>
 #include "src/iperf_api.h"
 #include "src/iperf.h"
+
+jobject g_obj;
+jmethodID onRecvThroughpuyMethodID;
+static JavaVM *jvm;
 
 static void vc_reporter_callback(struct iperf_test *test) {
     // To Store test progress and output bandwidth
@@ -91,6 +96,13 @@ static void vc_reporter_callback(struct iperf_test *test) {
                                 (float) outputprogress);
         }
     }
+
+    JNIEnv *env;
+    jint rs = (*jvm)->AttachCurrentThread(jvm, &env, NULL);
+    assert (rs == JNI_OK);
+
+    // Send data to Android
+    (*env)->CallVoidMethod(env, g_obj, onRecvThroughpuyMethodID, (double)outputbandwidth, (double)outputprogress);
 }
 
 JNIEXPORT jlong JNICALL
@@ -98,6 +110,26 @@ Java_com_shubhendu_iperfandroid_NativeLib_startPerfTestJNI(JNIEnv *env, jobject 
                                                            jstring j_logfile, jstring j_template,
                                                            jstring j_host, jint j_port, jint j_duration,
                                                            jint j_stream, jint j_reverse) {
+
+    /////////////////
+
+    // convert local to global reference
+    // (local will die after this method call)
+    g_obj = (*env)->NewGlobalRef(env, thiz);
+
+    // save refs for callback
+    jclass g_clazz = (*env)->GetObjectClass(env, g_obj);
+    if(g_clazz != NULL) {
+        onRecvThroughpuyMethodID = (*env)->GetMethodID(env, g_clazz,"onReceiveThroughput","(DD)V");
+    }
+
+    jint rs = (*env)->GetJavaVM(env, &jvm);
+    assert (rs == JNI_OK);
+
+    /////////////////////
+
+
+
 
     __android_log_print(ANDROID_LOG_DEBUG, "IPERF", "startperfios");
     struct iperf_test *test = iperf_new_test();
@@ -148,3 +180,4 @@ Java_com_shubhendu_iperfandroid_NativeLib_startPerfTestJNI(JNIEnv *env, jobject 
     __android_log_print(ANDROID_LOG_DEBUG, "IPERF", "iperf_free_test");
     iperf_free_test(test);
 }
+
