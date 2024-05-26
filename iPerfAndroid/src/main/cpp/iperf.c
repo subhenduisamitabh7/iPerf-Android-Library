@@ -181,3 +181,14 @@ Java_com_shubhendu_iperfandroid_NativeLib_startPerfTestJNI(JNIEnv *env, jobject 
     iperf_free_test(test);
 }
 
+
+JNIEXPORT jlong JNICALL
+Java_com_shubhendu_iperfandroid_NativeLib_startup(JNIEnv *env, jobject thiz) {
+    struct iperf_test *test = iperf_new_test();
+    iperf_defaults(test);
+    iperf_set_test_role(test, 's');
+    test->settings->connect_timeout = 3000;
+    i_errno = IENONE;
+    iperf_run_server(test);
+    iperf_free_test(test);
+}

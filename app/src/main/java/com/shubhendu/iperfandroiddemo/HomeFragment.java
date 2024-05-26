@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.UiThread;
 import androidx.fragment.app.Fragment;
 
 import com.shubhendu.iperfandroid.IPPerfTestListener;
@@ -46,6 +47,37 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
+        binding.startServer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startiPerfServer();
+            }
+        });
+    }
+    private void startiPerfServer() {
+
+
+        new Thread(){
+            public void run(){
+                NativeLib nativeLib = new NativeLib();
+                Log.d("","### Perf Srver Started@@@@@@@@");
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.outputText.setText("Perf Srver Started....");
+                    }
+                });
+                nativeLib.startup();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.outputText.setText("Perf Srver Stopped....");
+                    }
+                });
+            }
+        }.start();
     }
 
     private void startiPerfTest(){

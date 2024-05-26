@@ -9,7 +9,9 @@ public class NativeLib {
         System.loadLibrary("iperfandroid");
     }
 
-     public IPPerfTestListener IPPerfTestListener = null;
+    public native long startup();
+
+    public IPPerfTestListener IPPerfTestListener = null;
 
     /**
      * A native method that is implemented by the 'iperfandroid' native library,
